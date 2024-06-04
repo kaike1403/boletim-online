@@ -7,21 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.addEventListener('submit', armazenarDados);
     }
 
-    if (window.location.pathname.includes('boletim.html')) {
+    if (window.location.pathname.includes('index2.html')) {
         buscarDados();
     }
 });
 
 function armazenarDados(event) {
-    event.preventDefault(); // Impede o envio do formulário
+    event.preventDefault(); 
 
     const ra = document.getElementById('RA').value;
 
-    // Armazena o RA no localStorage
+    // Armazena o RA no local
     localStorage.setItem('RA', ra);
 
-    // Redireciona para a página boletim.html
-    window.location.href = 'boletim.html';
+    // Redireciona para a página boletim
+    window.location.href = 'index2.html';
 }
 
 async function buscarDados() {
@@ -68,7 +68,7 @@ async function buscarDados() {
             cell1.textContent = disciplina;
             cell2.textContent = notas[disciplina];
 
-            // Verifica se a nota é maior ou igual a 7 para definir a situação
+            // Verifica se a nota é maior ou igual a 7
             if (notas[disciplina] >= 7) {
                 cell3.textContent = 'Aprovado';
             } else {
